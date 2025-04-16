@@ -1,0 +1,35 @@
+services:
+  triton-server:
+    image: nvcr.io/nvidia/tritonserver:22.06-py3
+    command: tritonserver --model-repository=/models --strict-model-config=false --log-verbose 1
+    ports:
+      - "8000:8000"  # HTTP endpoint
+      - "8001:8001"  # gRPC endpoint
+      - "8002:8002"  # Metrics endpoint
+    volumes:
+      - ./triton-deploy/models:/models
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    shm_size: 1g
+    ulimits:
+      memlock: -1
+      stack: 67108864
+    
+  fastapi-app:
+    build: 
+      context: ../../..
+      dockerfile: Src/app/yolo_deploy/api/Dockerfile
+    ports:
+      - "8080:8000"  # Expose FastAPI on 8080 to avoid port conflict with Triton
+    environment:
+      - TRITON_URL=triton-server:8001  # Use the service name from docker-compose
+      - MODEL_WIDTH=640
+      - MODEL_HEIGHT=640
+      - MODEL_NAME=yolov7
+    depends_on:
+      - triton-server

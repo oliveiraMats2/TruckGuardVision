@@ -1,0 +1,12 @@
+pandas
+torch
+torchvision
+opencv-python
+tqdm
+pyyaml
+requests
+matplotlib
+seaborn
+scipy
+onnx
+mlflow

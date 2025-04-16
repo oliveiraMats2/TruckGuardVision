@@ -1,0 +1,16 @@
+.idea/
+coco/
+mlruns/
+runs/
+src/__pycache__/
+src/core/__pycache__/
+src/core/yolo/__pycache__/
+src/core/yolo/images/
+src/core/yolo/models/__pycache__/
+src/core/yolo/scripts/
+src/core/yolo/utils/__pycache__/
+src/core/yolo/utils/aws/
+src/core/yolo/utils/wandb_logging/__pycache__/
+src/core/yolo/weights/
+test2017.zip
+train2017.zip

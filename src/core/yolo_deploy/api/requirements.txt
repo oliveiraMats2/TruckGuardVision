@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+opencv-python
+numpy
+tritonclient[grpc]
+pydantic
+# python-multipart==0.0.6
+pillow
