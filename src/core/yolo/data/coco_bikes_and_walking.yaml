@@ -1,0 +1,15 @@
+# COCO 2017 dataset http://cocodataset.org
+
+# download command/URL (optional)
+# download: bash src/core/yolo/scripts/get_coco.sh
+
+# train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
+train: ./coco_filter/train2017.txt
+val: ./coco_filter/val2017.txt
+test: ./coco_filter/test-dev2017.txt
+
+# number of classes
+nc: 4
+
+# class names
+names: [ 'person', 'bicycle', 'car', 'motorcycle']

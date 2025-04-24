@@ -8,12 +8,12 @@ import torch
 import torch.backends.cudnn as cudnn
 from numpy import random
 
-from Src.core.pragas.yolo.models.experimental import attempt_load
-from Src.core.pragas.yolo.utils.datasets import LoadStreams, LoadImages
-from Src.core.pragas.yolo.utils.general import check_img_size, check_requirements, check_imshow, non_max_suppression, apply_classifier, \
+from src.core.yolo.models.experimental import attempt_load
+from src.core.yolo.utils.datasets import LoadStreams, LoadImages
+from src.core.yolo.utils.general import check_img_size, check_requirements, check_imshow, non_max_suppression, apply_classifier, \
     scale_coords, xyxy2xywh, strip_optimizer, set_logging, increment_path
-from Src.core.pragas.yolo.utils.plots import plot_one_box
-from Src.core.pragas.yolo.utils.torch_utils import select_device, load_classifier, time_synchronized, TracedModel
+from src.core.yolo.utils.plots import plot_one_box
+from src.core.yolo.utils.torch_utils import select_device, load_classifier, time_synchronized, TracedModel
 
 
 def detect(save_img: Optional[bool] = None):
@@ -192,7 +192,7 @@ if __name__ == '__main__':
     with torch.no_grad():
         if opt.update:  # update all models (to fix SourceChangeWarning)
             for opt.weights in ['yolov7.pt']:
-                detect()
+                detect(True)
                 strip_optimizer(opt.weights)
         else:
-            detect()
+            detect(True)

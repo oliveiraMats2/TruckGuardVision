@@ -14,3 +14,10 @@ src/core/yolo/utils/wandb_logging/__pycache__/
 src/core/yolo/weights/
 test2017.zip
 train2017.zip
+/VOCtrainval_11-May-2012.tar
+/coco_filter/
+/car_on_street.mp4
+/Dashcam_Catches_T-Bone_Crash.mp4
+/Dashcam_video_captures.mp4
+/road_cyclist.mp4
+/traced_model.pt
