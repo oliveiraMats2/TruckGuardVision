@@ -56,7 +56,7 @@ class OutputModel(BaseModel):
     images: List[ImageResponse]
 
 # Create the FastAPI app
-app = FastAPI(title="Pragas Detection API", description="API for pest detection using Triton Inference Server")
+app = FastAPI(title="Detection API", description="API for pest detection using Triton Inference Server")
 
 # Constants from the original script
 INPUT_NAMES = ["images"]

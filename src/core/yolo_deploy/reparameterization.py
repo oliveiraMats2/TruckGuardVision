@@ -4,8 +4,8 @@ from copy import deepcopy
 import torch
 import yaml
 
-from Src.core.pragas.yolo.models.yolo import Model
-from Src.core.pragas.yolo.utils.torch_utils import select_device, is_parallel
+from src.core.yolo.models.yolo import Model
+from src.core.yolo.utils.torch_utils import select_device, is_parallel
 
 NUM_CLASSES = 3
 

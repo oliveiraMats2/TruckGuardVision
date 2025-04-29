@@ -74,7 +74,7 @@ def kmean_anchors(path='./data/coco.yaml', n=9, img_size=640, thr=4.0, gen=1000,
             k: kmeans evolved anchors
 
         Usage:
-            from Src.core.pragas.yolo.utils.autoanchor import *; _ = kmean_anchors()
+            from src.core.yolo.utils.autoanchor import *; _ = kmean_anchors()
     """
     thr = 1. / thr
     prefix = colorstr('autoanchor: ')
@@ -103,7 +103,7 @@ def kmean_anchors(path='./data/coco.yaml', n=9, img_size=640, thr=4.0, gen=1000,
     if isinstance(path, str):  # *.yaml file
         with open(path) as f:
             data_dict = yaml.load(f, Loader=yaml.SafeLoader)  # model dict
-        from Src.core.pragas.yolo.utils.datasets import LoadImagesAndLabels
+        from src.core.yolo.utils.datasets import LoadImagesAndLabels
         dataset = LoadImagesAndLabels(data_dict['train'], augment=True, rect=True)
     else:
         dataset = path  # dataset
